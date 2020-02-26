@@ -7,9 +7,20 @@ from django.shortcuts import render, redirect
 
 def get1(request):
     context = {
-         "invoice_id":123,
-         "customer_name":"John Copper",
-         "amount":1399.99,
-         "today":"Today",
+         
+        "cust":[
+            {"invoice_id":123,
+            "customer_name":"John Copper",
+            "amount":1399.99,
+            "today":"Today"},
+            {"invoice_id":123,
+            "customer_name":"John Copper",
+            "amount":1399.99,
+            "today":"Today"},
+            {"invoice_id":123,
+            "customer_name":"John Copper",
+            "amount":1399.99,
+            "today":"Today"},
+        ]
     }
     return render(request,'temp/invoice.html',context)
