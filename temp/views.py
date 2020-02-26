@@ -23,4 +23,11 @@ def get1(request):
             "today":"Today"},
         ]
     }
-    return render(request,'temp/invoice.html',context)
+    #use the below one to get html 
+    #return render(request,'temp/invoice.html',context)
+
+    #need to search the template in the temp/template folder 
+    #otherwise it wont work
+    pdf = render_to_pdf('temp/invoice.html',context)
+    return HttpResponse(pdf,content_type='application/pdf')
+
